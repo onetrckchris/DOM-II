@@ -6,10 +6,10 @@ const logoHeading = document.querySelector('.logo-heading');
 logoHeading.addEventListener('mouseover', (event) => {
     if(colorCount < colorArray.length-1) {
         colorCount++;
-        logoHeading.style.color = colorArray[colorCount];
+        TweenMax.to(logoHeading, 0.5, {color: colorArray[colorCount]})
     } else {
         colorCount = -1;
-        logoHeading.style.color = colorArray[colorCount];
+        TweenMax.to(logoHeading, 0.5, {color: colorArray[colorCount]})
     }
 });
 

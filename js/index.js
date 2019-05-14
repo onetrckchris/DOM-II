@@ -64,9 +64,29 @@ window.addEventListener('load', (event) => {
 //     })
 // }
 
+// This is doing the same thing as above, only with a click event listener.
 for(let img of siteImgs) {
     img.addEventListener('click', (event) => {
         img.classList.toggle('scale-up');
     })
 }
 
+// Preventing items in the nav bar from taking you anywhere.
+const navItems = document.querySelectorAll('.nav-link')
+for(let item of navItems) {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log("You're not going anywhere...")
+    })
+}
+
+// Logs a message when your network goes offline.
+window.addEventListener('offline', (event) => {
+    console.log("Oof, your internet is dead.")
+})
+
+// Changes image when double clicked.
+const destImg = document.querySelector('.content-destination img')
+destImg.addEventListener('dblclick', (event) => {
+    destImg.setAttribute('src', './img/stop-spam.png')
+})
